@@ -1,11 +1,16 @@
+using ELSADemo;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 //ELSA
-builder.Services.AddElsa(options => 
-options.AddHttpActivities()).AddElsaApiEndpoints();
+builder.Services.AddElsa(options =>
+options.AddHttpActivities()
+    .AddWorkflow<ServiceRequestWorkflow>())
+    .AddElsaApiEndpoints();
+
 
 
 var app = builder.Build();

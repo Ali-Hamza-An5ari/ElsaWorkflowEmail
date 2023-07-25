@@ -6,10 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //ELSA
+
 builder.Services.AddElsa(options =>
-options.AddHttpActivities()
-    .AddWorkflow<ServiceRequestWorkflow>())
-    .AddElsaApiEndpoints();
+    
+    options.AddHttpActivities()).AddElsaApiEndpoints();
+// options.AddHttpActivities()
+//     .AddWorkflow<ServiceRequestWorkflow>())
+//     .AddElsaApiEndpoints();
 
 
 

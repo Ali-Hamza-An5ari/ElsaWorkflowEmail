@@ -6,7 +6,7 @@ public interface IEmployeeRepo
 {
     Task<EmployeeDto> CreateEmployeeAsync(Employee model);    
     Task<IEnumerable<EmployeeDto>> GetEmployeesAsync();
+    Task<EmployeeDto> GetEmployeeAsync(Guid employeeId);
     Task<IEnumerable<EmployeeNearbyDto>> GetNearbyEmployeesAsync(Guid reportLocationId, double maxDistanceInMeters);
     Task<EmployeeDto> UpdateEmployeeAsync(Employee model);    
-    Task<EmployeeDto> GetEmployeeAsync(Guid employeeId);
 }
